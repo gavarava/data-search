@@ -1,3 +1,7 @@
 quarkus:
   application:
     name: data-search
+  resteasy:
+    build-time-condition-aware=false:
+  resteasy-json:
+    json-default=true:

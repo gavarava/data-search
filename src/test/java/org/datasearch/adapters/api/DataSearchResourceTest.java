@@ -10,16 +10,16 @@ import static org.hamcrest.CoreMatchers.is;
  * https://quarkus.io/guides/getting-started-testing
  */
 @QuarkusTest
-public class DataSearchResourceTest {
+class DataSearchResourceTest {
 
     @Test
-    public void shouldReturnOk_whenFoundSearchedKeyword() {
+    void shouldReturnOk_whenFoundSearchedKeyword() {
         var searchKeyWord = "Anthony";
         given()
           .when().get("/search/" + searchKeyWord)
           .then()
              .statusCode(200)
-             .body(is("Anthony"));
+             .body(is("{\"searchResult\":[\"Anthony\"],\"searchTimeInMilliseconds\":0}"));
     }
 
     @Test
